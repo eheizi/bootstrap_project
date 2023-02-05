@@ -1,0 +1,242 @@
+// // Custom.scss
+// // Option B: Include parts of Bootstrap
+
+// // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// @import "../../node_modules/bootstrap/scss/functions";
+
+// // 2. Include any default variable overrides here
+// $custom-color: #df711b;
+// $custom-theme-colors: (
+//   "custom": $custom-color
+//  );
+// // 3. Include remainder of required Bootstrap stylesheets
+// @import "../../node_modules/bootstrap/scss/variables";
+// $theme-colors: map-merge($theme-colors, $custom-theme-colors);
+// @import "../../node_modules/bootstrap/scss/mixins";
+// @import "../../node_modules/bootstrap/scss/root";
+
+// // 4. Include any optional Bootstrap CSS as needed
+// @import "../../node_modules/bootstrap/scss/_utilities";
+// @import "../../node_modules/bootstrap/scss/reboot";
+// @import "../../node_modules/bootstrap/scss/type";
+// @import "../../node_modules/bootstrap/scss/images";
+// @import "../../node_modules/bootstrap/scss/containers";
+// @import "../../node_modules/bootstrap/scss/_grid";
+// @import "../../node_modules/bootstrap/scss/helpers";
+// @import "../../node_modules/bootstrap/_maps.scss";
+// // 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// @import "../node_modules/bootstrap/scss/utilities/api";
+
+
+
+
+// // 6. Add additional custom code here
+@import "../../node_modules/bootstrap/scss/bootstrap";
+.container-fluid,
+.row,ul {
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #0e3c48;
+}
+
+.App_container {
+    min-width: 318px;
+
+    //头部css header
+    .Hero_container {
+        background: #f5f5f5;
+       
+        .Hero_background {
+            background-image: url('./image/hero-background-v5@2x.webp');
+            margin: 0 auto;
+            background-size: auto 600px;
+            background-repeat: no-repeat;
+            background-position: right 45% bottom 19%;
+            
+
+            .Hero_content {
+                height: 432px;
+                padding-top: 24px;
+                padding-left: 32px;
+                margin: 0 auto;
+                max-width: 1061px;
+                display: flex;
+                flex-direction: column;
+
+                .Hero_nav {
+                    display: flex;
+                    height: 52px;
+                    justify-content: space-between;
+                    
+                    .Hero_logo {
+                        display: inline-block;
+                        width: 116px;
+                        height: 40px;
+                        background: url('./image/ja-logo-default.svg') no-repeat center center;
+                        -webkit-background-size: contain;
+                        background-size: contain;
+                    }
+                   
+                    .Hero_ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+
+                        li {
+                            cursor: pointer;
+                            height: 52px;
+
+                            display: flex;
+                            align-items: center;
+
+                        }
+
+                        .Hero_lis {
+                            position: relative;
+
+                            #iconDown {
+                                svg {
+                                    position: absolute;
+
+                                }
+
+                                width: 16px;
+                                height: 16px;
+                                display: inline-block;
+
+                                .iconHidden {
+                                    display: none;
+                                    height: 0;
+                                }
+                            }
+
+                            .nav_child_list {
+                                box-sizing: border-box;
+                                width: 144px;
+
+                                &>ul {
+                                    padding: 0;
+
+                                    li {
+                                        text-align: center;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        height: 37px;
+                                        width: 100%;
+                                        font-size: 14px;
+
+                                        &:hover {
+                                            background-color: #EBEBEB;
+                                        }
+                                    }
+                                }
+
+                                background-color: white;
+                                position: absolute;
+                                top: 55px;
+                                right: 0;
+                                padding: 10px 0;
+                                border-radius: 5px;
+                                box-shadow: 5px 3px 6px 0px #ccc;
+
+                                &.hiddes {
+                                    display: none;
+                                    height: 0;
+                                }
+                            }
+                        }
+
+                        a:hover {
+                            color: #127a95;
+                        }
+                    }
+
+                    .Hero_login {
+                        display: flex;
+                        align-items: center;
+
+                        .Hero_login_btn {
+                            width: 76px;
+                            min-width: 76px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 1px solid #0e3c48;
+                            border-radius: 4px;
+                            font-size: 16px;
+                            line-height: 24px;
+                            cursor: pointer;
+                            background: 0 0;
+                            box-sizing: border-box;
+                            color: #0e3c48;
+                            text-decoration: none !important;
+
+
+                        }
+
+                        .Hero_login_btn:hover {
+                            background: #228eaa;
+                            color: #fff;
+                            border: none;
+                        }
+
+                        .Hero_Burger {
+                            display: flex;
+                            width: 28px;
+                            height: 42px;
+                            margin-left: 16px;
+                            cursor: pointer;
+                          overflow: hidden;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            
+                            &>li {
+                                list-style: none;
+                                margin-top: 10px;
+                                width: 28px;
+                                height: 2px;
+                                background-color: #0e3c48;
+                                border-radius: 1px;
+                            }
+                        }
+                    }
+
+
+
+                }
+                .Hero_nav_col{
+                    position:absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100vh;
+                    background-color: rgba(118,118,118,0.5);
+                    .Hero_nav_children{
+                        background-color: #333333;
+                        height: 100vh;
+                        color: white;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+        @include media-breakpoint-between(xs, md) { 
+            .Hero_background {
+                height: 480px;
+                background-position: right -3px bottom 40px;
+                background-size: auto 599px;
+                background-image: url('./image/hero-background-v5@2x-mob.webp');
+            }
+          }
+    }
+}
